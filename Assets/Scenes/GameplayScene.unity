@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 2032412800}
   - component: {fileID: 2032412801}
   - component: {fileID: 2032412802}
+  - component: {fileID: 2032412803}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -424,6 +425,22 @@ MonoBehaviour:
   Mass: {fileID: 1239285519006105796, guid: 5be73b2e404d443d0a6c6aade836bf70, type: 3}
   MassPosition: {fileID: 759843991}
   Percentage: 0.01
+--- !u!114 &2032412803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032412797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297f69c2bfd9449cbb988af93f6422e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 20
+  LoseSpeed: 30
+  DefaultSpeed: 20
+  ApplySplitForce: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

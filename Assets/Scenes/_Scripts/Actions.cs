@@ -36,6 +36,19 @@ public class Actions : MonoBehaviour
         transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
     }
 
+    public void Split()
+    {
+        if (transform.localScale.x <= 2)
+        {
+            return;
+        }
+        GameObject newGameObject = Instantiate(gameObject, transform.position, Quaternion.identity);
+
+        newGameObject.GetComponent<SplitForce>().enabled = true;
+        newGameObject.GetComponent<SplitForce>().SplitPlayer();
+
+    }
+
 
 
     // Start is called before the first frame update

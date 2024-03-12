@@ -22,5 +22,9 @@ public class PlayerMovement : MonoBehaviour
         {
             actions.ThrowMass();
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            actions.Split();
+        }
     }
 }

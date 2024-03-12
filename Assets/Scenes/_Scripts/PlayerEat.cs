@@ -39,10 +39,16 @@ public class PlayerEat : MonoBehaviour
     }
 
 
-    public void Check()
+    public void CheckFood()
     {
         for (int i = 0; i < Food.Length; i++)
         {
+            if (Food[i] == null)
+            {
+                UpdateFood();
+                return;
+            }
+
             Transform m = Food[i].transform;
 
             if (Vector2.Distance(transform.position, m.position) <= transform.localScale.x / 2)
