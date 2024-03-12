@@ -160,7 +160,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0}
+  m_BackGroundColor: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: -20}
   Speed: 0.4
   MaxZoom: 7
-  MinZoom: 4
+  MinZoom: 5
   ZoomController: 3
   ZoomSpeed: 1
 --- !u!1 &759843990
@@ -298,9 +298,9 @@ MonoBehaviour:
   Players: []
   MaxPlayers: 6
   CreatedMasses: []
-  MaxMass: 50
+  MaxMass: 200
   Time_To_Instantiate: 0.5
-  pos: {x: 16, y: 8}
+  pos: {x: 50, y: 25}
 --- !u!4 &1227067999
 Transform:
   m_ObjectHideFlags: 0
@@ -316,6 +316,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1531699664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531699665}
+  - component: {fileID: 1531699666}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1531699665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531699664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531699666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531699664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8cf749f9dbf44068f339931481031e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.43356925, b: 0, a: 1}
+  - {r: 1, g: 0.979818, b: 0, a: 1}
+  - {r: 0.5412934, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0.6226415, b: 0.084345184, a: 1}
+  - {r: 0, g: 1, b: 0.54730225, a: 1}
+  - {r: 0, g: 0.8584906, b: 0.8100862, a: 1}
+  - {r: 0, g: 0.7605362, b: 1, a: 1}
+  - {r: 0, g: 0.40410137, b: 1, a: 1}
+  - {r: 0, g: 0.06733799, b: 1, a: 1}
+  - {r: 0.50430155, g: 0, b: 1, a: 1}
+  - {r: 0.9813132, g: 0, b: 1, a: 1}
+  - {r: 0.44708973, g: 0.46004948, b: 0.4811321, a: 1}
+  - {r: 0.6792453, g: 0.096405104, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.15702915, a: 1}
 --- !u!1 &2032412797
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,3 +595,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 2032412799}
   - {fileID: 1227067999}
+  - {fileID: 1531699665}

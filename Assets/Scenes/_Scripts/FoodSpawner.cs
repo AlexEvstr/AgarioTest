@@ -43,6 +43,8 @@ public class FoodSpawner : MonoBehaviour
 
             GameObject m = Instantiate(Mass, Position, Quaternion.identity);
 
+            ColorsManager.ins.GetRandomColor(m.GetComponent<SpriteRenderer>());
+
             AddFood(m);
 
         }

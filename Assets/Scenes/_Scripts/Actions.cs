@@ -26,6 +26,8 @@ public class Actions : MonoBehaviour
         // instantiate mass 
         GameObject b = Instantiate(Mass, MassPosition.position, Quaternion.identity);
 
+        ColorsManager.ins.GetTargetColor(GetComponent<SpriteRenderer>(), b.GetComponent<SpriteRenderer>());
+
         // apply force
         b.GetComponent<FoodForce>().ApplyForce = true;
 
@@ -64,6 +66,7 @@ public class Actions : MonoBehaviour
     {
         mass_script = GetComponent<PlayerEat>();
         ms = FoodSpawner.ins;
+        ColorsManager.ins.GetPlayerColor(GetComponent<SpriteRenderer>());
     }
 
     // Update is called once per frame
