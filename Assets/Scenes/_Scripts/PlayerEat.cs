@@ -69,10 +69,10 @@ public class PlayerEat : MonoBehaviour
     void Start()
     {
         UpdateFood();
-        InvokeRepeating("Check", 0, 0.1f);
-        ms = FoodSpawner.ins;
+        InvokeRepeating("CheckFood", 0, 0.1f);
 
-        ms.Players.Add(gameObject);
+        ms = FoodSpawner.ins;
+        //ms.Players.Add(gameObject);
     }
 
     void EatFood()

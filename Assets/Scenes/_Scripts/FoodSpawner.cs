@@ -18,6 +18,8 @@ public class FoodSpawner : MonoBehaviour
 
     public GameObject Mass;
     public List<GameObject> Players = new List<GameObject>();
+
+    public int MaxPlayers = 6;
     public List<GameObject> CreatedMasses = new List<GameObject>();
     public int MaxMass = 50;
     public float Time_To_Instantiate = 0.5f;
@@ -72,6 +74,22 @@ public class FoodSpawner : MonoBehaviour
                 PlayerEat pp = Players[i].GetComponent<PlayerEat>();
                 pp.RemoveMass(m);
             }
+        }
+    }
+
+    public void AddPlayer(GameObject b)
+    {
+        if (Players.Contains(b) == false)
+        {
+            Players.Add(b);
+        }
+    }
+
+    public void RemovePlayer(GameObject b)
+    {
+        if (Players.Contains(b) == true)
+        {
+            Players.Remove(b);
         }
     }
 

@@ -9,6 +9,8 @@ public class Actions : MonoBehaviour
 
     public float Percentage = 0.01f;
 
+    public float SplitMass = 2.0f;
+
 
     public void ThrowMass()
     {
@@ -42,6 +44,9 @@ public class Actions : MonoBehaviour
         {
             return;
         }
+
+        transform.localScale /= SplitMass;
+
         GameObject newGameObject = Instantiate(gameObject, transform.position, Quaternion.identity);
 
         newGameObject.GetComponent<SplitForce>().enabled = true;
@@ -64,6 +69,10 @@ public class Actions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.localScale.x <= 1)
+        {
+            return;
+        }
         transform.localScale -= new Vector3(Percentage, Percentage, Percentage) * Time.deltaTime;
     }
 }

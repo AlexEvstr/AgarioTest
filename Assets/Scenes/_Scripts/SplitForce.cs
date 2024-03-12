@@ -12,6 +12,8 @@ public class SplitForce : MonoBehaviour
 
     public void SplitPlayer()
     {
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<PlayerMovement>().lockActions = true;
         Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
         transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -33,6 +35,8 @@ public class SplitForce : MonoBehaviour
 
         if (Speed <= 0)
         {
+            GetComponent<CircleCollider2D>().enabled = true;
+            GetComponent<PlayerMovement>().lockActions = false;
             enabled = false;
         }
     }
