@@ -21,8 +21,8 @@ public class FoodSpawner : MonoBehaviour
 
     public int MaxPlayers = 6;
     public List<GameObject> CreatedMasses = new List<GameObject>();
-    public int MaxMass = 50;
-    public float Time_To_Instantiate = 0.5f;
+    public int MaxMass = 200;
+    public float Time_To_Instantiate = 0.25f;
     public Vector2 pos;
 
 
@@ -44,6 +44,8 @@ public class FoodSpawner : MonoBehaviour
             GameObject m = Instantiate(Mass, Position, Quaternion.identity);
 
             ColorsManager.ins.GetRandomColor(m.GetComponent<SpriteRenderer>());
+
+            m.GetComponent<FoodSize>().MakeRandomSize();
 
             AddFood(m);
 

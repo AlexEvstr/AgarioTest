@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7443274407282685802}
   - component: {fileID: 2665751332269994445}
   - component: {fileID: 9004099705069957682}
+  - component: {fileID: -7588370386851716143}
   m_Layer: 0
   m_Name: food
   m_TagString: Food
@@ -102,3 +103,17 @@ MonoBehaviour:
   LoseSpeed: 140
   RandomRotation: 10
   RandomeForce: 5
+--- !u!114 &-7588370386851716143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239285519006105796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4e41d2c49374533a6d014a9b0a43b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinSize: 0.4
+  MaxSize: 1
