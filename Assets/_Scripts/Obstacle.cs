@@ -45,4 +45,14 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnEnable()
+    {
+        ObstacleSpawner.ins.AddObstacle(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        ObstacleSpawner.ins.RemoveObstacle(gameObject);
+    }
 }
