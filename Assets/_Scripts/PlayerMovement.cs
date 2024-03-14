@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     public bool lockActions = false;
+    MapBorders mapBorders;
+
     private void Start()
     {
         actions = GetComponent<Actions>();
@@ -16,8 +18,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        mapBorders = MapBorders.ins;
         float newSpeed = _speed / transform.localScale.x;
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        direction.x = Mathf.Clamp(direction.x, mapBorders.MapLimits.x * -1 / 2, mapBorders.MapLimits.x / 2);
+        direction.y = Mathf.Clamp(direction.y, mapBorders.MapLimits.y * -1 / 2, mapBorders.MapLimits.y / 2);
         transform.position = Vector2.MoveTowards(transform.position, direction, newSpeed * Time.deltaTime);
 
         if (lockActions)

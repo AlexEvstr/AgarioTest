@@ -23,11 +23,12 @@ public class FoodSpawner : MonoBehaviour
     public List<GameObject> CreatedMasses = new List<GameObject>();
     public int MaxMass = 200;
     public float Time_To_Instantiate = 0.25f;
-    public Vector2 pos;
 
+    MapBorders mapBorders;
 
     private void Start()
     {
+        mapBorders = MapBorders.ins;
         StartCoroutine(CreateFood());
     }
 
@@ -38,7 +39,7 @@ public class FoodSpawner : MonoBehaviour
 
         if (CreatedMasses.Count <= MaxMass)
         {
-            Vector2 Position = new Vector2(Random.Range(-pos.x, pos.x), Random.Range(-pos.y, pos.y));
+            Vector2 Position = new Vector2(Random.Range(-mapBorders.MapLimits.x, mapBorders.MapLimits.x), Random.Range(-mapBorders.MapLimits.y, mapBorders.MapLimits.y));
             Position /= 2;
 
             GameObject m = Instantiate(Mass, Position, Quaternion.identity);
@@ -95,12 +96,5 @@ public class FoodSpawner : MonoBehaviour
         {
             Players.Remove(b);
         }
-    }
-
-
-    public void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireCube(transform.position, pos);
     }
 }
