@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using System.Drawing;
 
 public class Obstacle : MonoBehaviour
 {
@@ -7,8 +9,15 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (collision.gameObject.transform.localScale.x <= 2)
+            {
+                return;
+            }
+
             GameObject player = collision.gameObject;
-            int CountToSpawn = (int)player.transform.localScale.x;
+            int CountToSpawn = (int)player.transform.localScale.x - 1;
+            Debug.Log("Count to spawn(float): " + player.transform.localScale.x);
+            Debug.Log("Count to spawn(int): " + CountToSpawn);
             player.transform.localScale /= player.transform.localScale.x;
 
             List<GameObject> instantiatedPlayers = new List<GameObject>();
@@ -42,6 +51,7 @@ public class Obstacle : MonoBehaviour
                 playerToRotate.GetComponent<SplitForce>().enabled = true;
             }
 
+            FoodSpawner.ins.MakeOnePlayer();
             Destroy(gameObject);
         }
     }

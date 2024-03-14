@@ -15,6 +15,9 @@ public class CameraFollow : MonoBehaviour
 
     public float ZoomSpeed = 1.0f;
 
+    public float MouseScroll = 0f;
+    public float MouseScrollSpeed = 50.0f;
+
     private void Start()
     {
         camera = Camera.main;
@@ -34,7 +37,11 @@ public class CameraFollow : MonoBehaviour
 
     private void Zoom()
     {
+        MouseScroll -= Input.GetAxis("Mouse ScrollWheel") * MouseScrollSpeed * Time.deltaTime;
+
         camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, GetZoom(), ZoomSpeed);
+
+        MouseScroll = Mathf.Clamp(MouseScroll, MinZoom, MaxZoom);
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, MinZoom, MaxZoom);
     }
 
@@ -49,7 +56,11 @@ public class CameraFollow : MonoBehaviour
             bounds.Encapsulate(foodSpawner.Players[i].transform.position);
         }
 
-        return (bounds.size.x + bounds.size.y) / ZoomController;
+        float z = (bounds.size.x + bounds.size.y) / ZoomController;
+
+        z += MouseScroll;
+
+        return z;
     }
 
     private Vector3 GetCenter()

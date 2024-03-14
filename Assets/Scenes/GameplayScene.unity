@@ -306,10 +306,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: -20}
   Speed: 0.4
-  MaxZoom: 7
-  MinZoom: 5
+  MaxZoom: 8
+  MinZoom: 3
   ZoomController: 3
   ZoomSpeed: 1
+  MouseScroll: 0
+  MouseScrollSpeed: 50
 --- !u!1 &694432791
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +950,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 759843991}

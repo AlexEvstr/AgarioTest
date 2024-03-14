@@ -87,6 +87,7 @@ public class FoodSpawner : MonoBehaviour
         if (Players.Contains(b) == false)
         {
             Players.Add(b);
+            b.SetActive(true);
         }
     }
 
@@ -95,6 +96,35 @@ public class FoodSpawner : MonoBehaviour
         if (Players.Contains(b) == true)
         {
             Players.Remove(b);
+            b.SetActive(false);
         }
+    }
+
+    public void MakeOnePlayer()
+    {
+        StartCoroutine(CombineParts());
+    }
+
+    private IEnumerator CombineParts()
+    {
+        float size = 0;
+        yield return new WaitForSeconds(10f);
+        for (int i = 0; i < Players.Count; i++)
+        {
+            Players[i].GetComponent<CircleCollider2D>().enabled = false;
+        }
+        
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < Players.Count; i++)
+        {
+            size += Players[i].transform.localScale.x;
+        }
+        for (int i = 0; i < Players.Count; i++)
+        {
+            RemovePlayer(Players[i]);
+        }
+        Players[0].transform.localScale = new Vector3(size, size, size);
+        Players[0].GetComponent<CircleCollider2D>().enabled = true;
+        Players[1].SetActive(false);
     }
 }

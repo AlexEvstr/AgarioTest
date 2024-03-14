@@ -48,12 +48,34 @@ public class Actions : MonoBehaviour
         }
 
         transform.localScale /= SplitMass;
+        StartCoroutine(SplitAndCombine());
+        
+    }
 
+    private IEnumerator SplitAndCombine()
+    {
+        float size = 0;
         GameObject newGameObject = Instantiate(gameObject, transform.position, Quaternion.identity);
 
         newGameObject.GetComponent<SplitForce>().enabled = true;
         newGameObject.GetComponent<SplitForce>().SplitPlayer();
 
+        yield return new WaitForSeconds(10.0f);
+        GetComponent<CircleCollider2D>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < FoodSpawner.ins.Players.Count; i++)
+        {
+            size += FoodSpawner.ins.Players[i].transform.localScale.x;
+        }
+        for (int i = 1; i < FoodSpawner.ins.Players.Count; i++)
+        {
+            FoodSpawner.ins.RemovePlayer(FoodSpawner.ins.Players[i]);
+        }
+        
+        Debug.Log(size);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.localScale = new Vector3(size, size, size);
+        GetComponent<CircleCollider2D>().enabled = true;
     }
 
 
