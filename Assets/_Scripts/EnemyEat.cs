@@ -7,9 +7,10 @@ public class EnemyEat : MonoBehaviour
 {
     private GameObject _gameOver;
 
-    private void Awake()
+    private void Start()
     {
         _gameOver = GameObject.FindGameObjectWithTag("GameOver");
+        _gameOver.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -88,7 +88,7 @@ public class Actions : MonoBehaviour
     {
         mass_script = GetComponent<PlayerEat>();
         ms = FoodSpawner.ins;
-        ColorsManager.ins.GetPlayerColor(GetComponent<SpriteRenderer>());
+        //ColorsManager.ins.GetPlayerColor(GetComponent<SpriteRenderer>());
     }
 
     // Update is called once per frame

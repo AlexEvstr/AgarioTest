@@ -1236,6 +1236,7 @@ MonoBehaviour:
   - {r: 0.44708973, g: 0.46004948, b: 0.4811321, a: 1}
   - {r: 0.6792453, g: 0.096405104, b: 0, a: 1}
   - {r: 1, g: 0, b: 0.15702915, a: 1}
+  _player: {fileID: 2032412798}
 --- !u!114 &1531699667
 MonoBehaviour:
   m_ObjectHideFlags: 0

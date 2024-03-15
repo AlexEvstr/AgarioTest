@@ -5,9 +5,6 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyMovement : MonoBehaviour
 {
-    
-    [SerializeField] private GameObject _gameOverPanel;
-
     public float _speed = 5.0f;
     private float waitTime;           //время отдыха между передвижениями
     public float startWaitTime;
@@ -17,11 +14,10 @@ public class EnemyMovement : MonoBehaviour
     private GameObject _gameOver;
     private GameObject _player;
 
-    void Start()
+    void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _gameOver = GameObject.FindGameObjectWithTag("GameOver");
-        _gameOver.SetActive(false);
         waitTime = startWaitTime;
         transform.eulerAngles = new Vector2(0, 0);
     }

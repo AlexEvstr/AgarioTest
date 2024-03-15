@@ -16,4 +16,9 @@ public class MenuManager : MonoBehaviour
     {
         _settings.SetActive(true);
     }
+
+    public void BackButton()
+    {
+        _settings.SetActive(false);
+    }
 }
