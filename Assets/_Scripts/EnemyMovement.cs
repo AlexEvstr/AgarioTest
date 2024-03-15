@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
+    
+    [SerializeField] private GameObject _gameOverPanel;
 
     public float _speed = 5.0f;
     private float waitTime;           //время отдыха между передвижениями
@@ -12,8 +14,14 @@ public class EnemyMovement : MonoBehaviour
     bool wait = false;
     Vector3 moveTarget;
 
+    private GameObject _gameOver;
+    private GameObject _player;
+
     void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _gameOver = GameObject.FindGameObjectWithTag("GameOver");
+        _gameOver.SetActive(false);
         waitTime = startWaitTime;
         transform.eulerAngles = new Vector2(0, 0);
     }
@@ -26,8 +34,7 @@ public class EnemyMovement : MonoBehaviour
                 _player = GameObject.FindGameObjectWithTag("Player");
             else
             {
-                Debug.Log("Game Over");
-                Time.timeScale = 0;
+                _gameOver.SetActive(true);
             }
         }
         float newSpeed = _speed / transform.localScale.x;

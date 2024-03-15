@@ -5,6 +5,13 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyEat : MonoBehaviour
 {
+    private GameObject _gameOver;
+
+    private void Awake()
+    {
+        _gameOver = GameObject.FindGameObjectWithTag("GameOver");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Food"))
@@ -23,7 +30,7 @@ public class EnemyEat : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Game Over");
+                    _gameOver.SetActive(true);
                 }
                 transform.localScale += collision.gameObject.transform.localScale;
             }

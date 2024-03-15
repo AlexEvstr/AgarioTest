@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour
     public float Speed = 0.4f;
     private Camera camera;
     public float MaxZoom = 6.0f;
-    public float MinZoom = 3.0f;
+    public float MinZoom = 4.0f;
 
     public float ZoomController = 2.0f;
 
