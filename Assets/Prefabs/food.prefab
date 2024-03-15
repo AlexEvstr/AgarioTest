@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2665751332269994445}
   - component: {fileID: 9004099705069957682}
   - component: {fileID: -7588370386851716143}
+  - component: {fileID: 8436593446699161529}
   m_Layer: 0
   m_Name: food
   m_TagString: Food
@@ -115,5 +116,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b4e41d2c49374533a6d014a9b0a43b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSize: 0.4
-  MaxSize: 1
+--- !u!58 &8436593446699161529
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239285519006105796}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

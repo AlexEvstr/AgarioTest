@@ -22,7 +22,7 @@ public class FoodSpawner : MonoBehaviour
     public int MaxPlayers = 6;
     public List<GameObject> CreatedMasses = new List<GameObject>();
     public int MaxMass = 200;
-    public float Time_To_Instantiate = 0.25f;
+    public float Time_To_Instantiate = 0.01f;
 
     MapBorders mapBorders;
 

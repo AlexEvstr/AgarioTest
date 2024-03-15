@@ -17,14 +17,14 @@ public class ObstacleSpawner : MonoBehaviour
     #endregion
 
     public GameObject Obstacle;
-    public int MaxObstacles = 20;
+    public int MaxObstacles = 10;
     public List<GameObject> Obstacles = new List<GameObject>();
     private MapBorders mapBorders;
 
     private void Start()
     {
         mapBorders = MapBorders.ins;
-        InvokeRepeating("InstantiateObstacle", 1, 1);
+        InvokeRepeating("InstantiateObstacle", 0, 0.1f);
     }
 
     private void InstantiateObstacle()
