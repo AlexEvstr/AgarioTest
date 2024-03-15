@@ -16,7 +16,6 @@ public class EnemyMovement : MonoBehaviour
     {
         waitTime = startWaitTime;
         transform.eulerAngles = new Vector2(0, 0);
-        transform.position = new Vector2(3, 3);      //стартуем в центре карты
     }
 
     void Update()
